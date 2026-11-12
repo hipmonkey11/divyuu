@@ -24,7 +24,7 @@ h1 span{color:var(--pink);font-style:italic}
 .subtitle{font-size:clamp(17px,3vw,22px);line-height:1.7;color:#f6dce6;max-width:610px;margin:24px auto}
 .heart{font-size:38px;display:inline-block;animation:heartbeat 1.5s infinite}
 @keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.2)}28%{transform:scale(1)}42%{transform:scale(1.13)}}
-.btn{border:1px solid #ffabc4;background:linear-gradient(135deg,#ff8fb3,#e84d86);color:#351329;padding:16px 25px;border-radius:999px;font: bold 14px Arial,sans-serif;letter-spacing:.4px;cursor:pointer;transition:.2s ease;box-shadow:0 10px 30px #f1587f38}
+.btn{border:1px solid #ffabc4;background:linear-gradient(135deg,#ff8fb3,#e84d86);color:#351329;padding:16px 25px;border-radius:999px;font: bold 14px Arial,sans-serif;letter-spacing:.4px;cursor:pointer;box-shadow:0 10px 35px #fa609044;transition:.25s}
 .btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px #fa609077}
 .hint{font:12px Arial,sans-serif;color:#d7b7c7;margin-top:15px}
 section{padding:90px 22px;text-align:center}
@@ -44,7 +44,7 @@ footer{text-align:center;padding:35px 20px 55px;color:#d7b6c6;font:13px Arial,sa
 .modal{position:fixed;inset:0;z-index:10;background:#100713d9;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(9px)}
 .modal.show{display:flex;animation:fade .25s}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-.modal-box{position:relative;width:min(550px,100%);padding:42px 27px 32px;border:1px solid #ffabc477;border-radius:26px;background:linear-gradient(145deg,#54213f,#27112e);text-align:center;box-shadow:0 25px 60px rgba(0,0,0,.4);animation:pop .25s}
+.modal-box{position:relative;width:min(550px,100%);padding:42px 27px 32px;border:1px solid #ffabc477;border-radius:26px;background:linear-gradient(145deg,#54213f,#27112e);text-align:center;box-shadow:0 25px 90px #0009;animation:pop .45s cubic-bezier(.2,.9,.2,1.2)}
 @keyframes pop{from{transform:scale(.75) translateY(20px);opacity:0}to{transform:scale(1);opacity:1}}
 .modal-box .big-heart{font-size:48px}
 .modal-box h2{font-size:34px;color:#ffd5e1;margin:12px 0}
@@ -54,6 +54,24 @@ footer{text-align:center;padding:35px 20px 55px;color:#d7b6c6;font:13px Arial,sa
 .floating-heart{position:absolute;font-size:22px;animation:floatup 2.2s ease-out forwards}
 @keyframes floatup{to{transform:translateY(-75vh) rotate(25deg);opacity:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Love quest additions */
+.quest-wrap{max-width:850px;margin:38px auto 0;text-align:left}
+.quest-panel{border:1px solid #ffabc455;background:linear-gradient(145deg,#ffffff12,#ffffff06);backdrop-filter:blur(10px);border-radius:25px;padding:clamp(22px,5vw,38px);box-shadow:0 18px 60px #08030d55}
+.quest-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font:12px Arial,sans-serif;color:#f6c5d7;letter-spacing:1px;text-transform:uppercase}
+.progress{height:7px;border-radius:20px;background:#ffffff18;overflow:hidden;margin:15px 0 28px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffb4cc,#ff5f91);border-radius:20px;transition:width .5s}
+.quest-step h3{font-size:clamp(22px,4vw,30px);font-weight:normal;color:#ffe1ea;margin:0 0 10px}.quest-step>p{font:15px/1.8 Arial,sans-serif;color:#e9cbd8;margin:0 0 22px}
+.choice-grid,.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.choice,.detail{font:14px/1.5 Arial,sans-serif;color:#ffeaf0;text-align:left;border:1px solid #ffb5cb55;background:#ffffff0c;border-radius:16px;padding:17px 15px;cursor:pointer;transition:.2s;min-height:94px}
+.choice:hover,.detail:hover{transform:translateY(-3px);background:#ff8fb322;border-color:#ffabc4}.choice.selected{background:#ff8fb333;border-color:#ffabc4;box-shadow:0 0 0 2px #ff8fb322}
+.choice b,.detail b{display:block;color:#ffc1d3;font-size:16px;margin-bottom:5px;font-weight:normal}
+.quest-feedback{min-height:48px;margin:17px 0 5px;color:#ffd4e1;font:14px/1.7 Arial,sans-serif}
+.quest-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.btn.secondary{background:#ffffff0c;color:#ffe5ed;border-color:#ffabc455;box-shadow:none}
+.word-bank{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.word{border:1px solid #ffabc477;background:#ffffff12;color:#fff0f5;border-radius:999px;padding:12px 16px;font:14px Arial,sans-serif;cursor:pointer}.word:disabled{opacity:.35;cursor:default}.answer-line{min-height:54px;border:1px dashed #ffabc477;border-radius:15px;padding:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#eacbd8;font:13px Arial,sans-serif}.answer-word{background:#ff8fb333;border-radius:999px;padding:8px 12px;color:#fff0f5}
+.detail{min-height:130px;text-align:center}.detail .detail-icon{display:block;font-size:27px;margin-bottom:8px}.detail small{display:block;color:#e8c8d6;line-height:1.6}.detail.revealed{background:#ff8fb322;border-color:#ffabc4}
+.final-love{padding-top:65px}.portrait-frame{max-width:390px;margin:30px auto 22px;padding:10px;border:1px solid #ffabc477;border-radius:28px;background:linear-gradient(145deg,#ffb4cc55,#ffffff08);box-shadow:0 20px 70px #0006;transform:rotate(-1deg)}.portrait-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;background:#44203a}.photo-caption{font:12px/1.7 Arial,sans-serif;color:#dcbaca;max-width:440px;margin:0 auto}.final-line{font-size:clamp(25px,5vw,42px);line-height:1.35;color:#ffe5ed;margin:25px auto;max-width:680px}
+@media(max-width:520px){.quest-panel{padding:20px 16px}.quest-top{font-size:10px}.choice,.detail{padding:14px 12px}}
+
 </style>
 </head>
 <body>
@@ -97,6 +115,73 @@ footer{text-align:center;padding:35px 20px 55px;color:#d7b6c6;font:13px Arial,sa
   <button class="btn" onclick="openLove(1)">One last little surprise 💗</button>
  </div>
 </section>
+
+<section id="loveQuest">
+ <div class="section-inner">
+  <div class="eyebrow">A tiny adventure, just for you</div>
+  <h2>Will you play a little game with me?</h2>
+  <p class="lead">Three little steps. No scores, no pressure, and absolutely no wrong answers. Just a few things I wish I could tell you while looking into your eyes.</p>
+  <div class="quest-wrap">
+   <div class="quest-panel">
+    <div class="quest-top"><span>♡ The little love quest</span><span id="questCount">Step 1 of 3</span></div>
+    <div class="progress"><span id="questProgress"></span></div>
+    <div class="quest-step" id="questStep1">
+     <h3>1. Which version of you makes me smile instantly?</h3>
+     <p>Choose the moment you think I secretly replay in my head. (The truth is, I have too many favourites.)</p>
+     <div class="choice-grid">
+      <button class="choice" onclick="chooseMoment(this,0)"><b>🌸 The twirl</b>That pretty little flower-frock twirl of yours.</button>
+      <button class="choice" onclick="chooseMoment(this,1)"><b>😊 The shy smile</b>When you smile a little and then suddenly can't stop.</button>
+      <button class="choice" onclick="chooseMoment(this,2)"><b>🎥 Story time</b>When you tell me your random stories or vlog updates.</button>
+     </div>
+     <div class="quest-feedback" id="momentFeedback" aria-live="polite">Pick whichever feels most like you, pretty girl.</div>
+     <div class="quest-actions"><button class="btn" id="momentNext" disabled onclick="goQuest(2)">Next little surprise →</button></div>
+    </div>
+    <div class="quest-step" id="questStep2" hidden>
+     <h3>2. Put my little message back together</h3>
+     <p>Tap the words in the right order. A tiny puzzle for a girl who makes ordinary days feel special.</p>
+     <div class="answer-line" id="answerLine"><span>Your words will appear here…</span></div>
+     <div class="word-bank" id="wordBank"></div>
+     <div class="quest-feedback" id="puzzleFeedback" aria-live="polite">A hint: it starts with what I love seeing on your face.</div>
+     <div class="quest-actions"><button class="btn secondary" onclick="resetPuzzle()">Start again</button><button class="btn" id="puzzleCheck" onclick="checkPuzzle()">Check my answer</button></div>
+    </div>
+    <div class="quest-step" id="questStep3" hidden>
+     <h3>3. Discover the little things I notice</h3>
+     <p>Tap every card. These are the details my eyes keep finding, even when you think I'm not paying attention.</p>
+     <div class="detail-grid">
+      <button class="detail" onclick="revealDetail(this,0)"><span class="detail-icon">👀</span><b>Your expressions</b><small>Tap to reveal</small></button>
+      <button class="detail" onclick="revealDetail(this,1)"><span class="detail-icon">🌷</span><b>Your little details</b><small>Tap to reveal</small></button>
+      <button class="detail" onclick="revealDetail(this,2)"><span class="detail-icon">💗</span><b>Your smile</b><small>Tap to reveal</small></button>
+      <button class="detail" onclick="revealDetail(this,3)"><span class="detail-icon">✨</span><b>Your whole you</b><small>Tap to reveal</small></button>
+     </div>
+     <div class="quest-feedback" id="detailFeedback" aria-live="polite">There are no ordinary details when they're yours.</div>
+     <div class="quest-actions"><button class="btn" id="finishQuest" disabled onclick="finishLoveQuest()">Unlock your final surprise ♡</button></div>
+    </div>
+    <div class="quest-step" id="questComplete" hidden>
+     <div style="font-size:38px;margin-bottom:10px">💌</div>
+     <h3>You did it, my love.</h3>
+     <p>You found every little piece. Now there's one last thing I want you to see.</p>
+     <button class="btn" onclick="document.getElementById('portraitSection').scrollIntoView({behavior:'smooth'})">Go to your surprise ↓</button>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="final-love" id="portraitSection">
+ <div class="section-inner">
+  <div class="eyebrow">The final step · my favourite human</div>
+  <h2>And here she is…</h2>
+  <p class="lead">The most beautiful human in my world. Not a perfect picture, not a perfect day. Just you — and that's my favourite thing.</p>
+  <div class="portrait-frame">
+   <!-- Replace the data:image/svg+xml placeholder below with your photo path, e.g. src="divya.jpg" -->
+   <img id="divyaPortrait" alt="A special photo of the most beautiful girl in my world" src="images/divya.PNG">
+  </div>
+  <p class="photo-caption">♡ Kuchupuchuu baby Miss Divya Raj Preetam Singh I love you soooo much my babyyy</p>
+  <p class="final-line">“If I could choose one view to keep forever, it would still be you.”</p>
+  <p class="lead">I love the girl who twirls, the girl who smiles, the girl who tells me stories, and the girl who sometimes doesn't feel beautiful. I wish you could borrow my eyes for just one minute. Maybe then you'd understand. ♡</p>
+  <button class="btn" onclick="openLove(2)">One last thing I need you to know 💗</button>
+ </div>
+</section>
+
 <footer>Made with all my love, just for you. <span style="color:#ff9fbd">♡</span></footer>
 </main>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeLove()">
@@ -110,15 +195,38 @@ footer{text-align:center;padding:35px 20px 55px;color:#d7b6c6;font:13px Arial,sa
 </div>
 <script>
 const messages=[
- {title:"My beautiful girl…",text:"I wish you could see what I see when I look at you. I see the girl whose smile can turn my whole day around, whose presence feels like peace, and whose little imperfections somehow make her even more stunning to me. You are beautiful in the quiet, in the loud, in the ordinary, and in the unforgettable. I am so lucky to love you."},
- {title:"A promise from me",text:"On the days you feel pretty, I'll admire you. On the days you don't, I'll still admire you. You never have to earn my love by looking a certain way. I want to be the person who reminds you that you are already enough, already beautiful, and already deeply treasured."}
+ {title:"My beautiful girl…",text:"I wish you could see what I see when I look at you. I see the girl whose smile can turn my whole day around, whose presence feels like peace, and whose little imperfections make her perfectly herself. You are not beautiful because I love you. I love you, and I find you beautiful in a thousand different ways. ♡"},
+ {title:"A promise from me",text:"On the days you feel pretty, I'll admire you. On the days you don't, I'll still admire you. You never have to earn my love by looking a certain way. I want to be the person who reminds you gently, patiently, and honestly: you are enough, you are special, and you are my favourite person. I love you. 💗"},
+ {title:"One thing I hope you believe",text:"Divya, you are the most beautiful human in my world. I don't say that to win an argument or to make you feel better for a moment. I say it because it's what I see — in your smile, your little habits, your stories, and every ordinary moment of being you. You don't have to agree with me today. Just let me keep loving you until you can be a little kinder to the person I adore. ♡"}
 ];
-function openLove(i){document.getElementById('modalTitle').textContent=messages[i].title;document.getElementById('modalText').textContent=messages[i].text;document.getElementById('modal').classList.add('show')}
+function openLove(i){document.getElementById('modalTitle').textContent=messages[i].title;document.getElementById('modalText').textContent=messages[i].text;document.getElementById('modal').classList.add('show');hearts()}
 function closeLove(){document.getElementById('modal').classList.remove('show')}
-function hearts(){const root=document.getElementById('burst');for(let i=0;i<22;i++){const e=document.createElement('span');e.className='floating-heart';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'%';e.style.top=Math.random()*80+20+'%';e.style.animationDelay=(Math.random()*0.6)+'s';e.style.opacity='1';root.appendChild(e);setTimeout(()=>e.remove(),2200)}}
-setInterval(hearts,1800);
-const stars=document.getElementById('stars');for(let i=0;i<65;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.animationDuration=(2+Math.random()*3)+'s';stars.appendChild(s)}
-const petals=document.getElementById('petals');for(let i=0;i<18;i++){const p=document.createElement('span');p.className='petal';p.textContent='✿';p.style.left=Math.random()*100+'%';p.style.animationDelay=(Math.random()*10)+'s';p.style.animationDuration=(7+Math.random()*9)+'s';p.style.fontSize=(12+Math.random()*18)+'px';petals.appendChild(p)}
+function hearts(){const root=document.getElementById('burst');for(let i=0;i<22;i++){const e=document.createElement('span');e.className='floating-heart';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.top=(55+Math.random()*40)+'vh';e.style.animationDelay=Math.random()*.5+'s';root.appendChild(e);setTimeout(()=>e.remove(),2800)}}
+const stars=document.getElementById('stars');for(let i=0;i<65;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s)}
+const petals=document.getElementById('petals');for(let i=0;i<18;i++){const p=document.createElement('span');p.className='petal';p.textContent='✿';p.style.left=Math.random()*100+'%';p.style.animationDuration=(9+Math.random()*13)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.fontSize=(10+Math.random()*13)+'px';petals.appendChild(p)}
+
+const momentLines=[
+ "That little twirl in your flowerish frock is a scene I wish I could pause. You look so carefree and so wonderfully you. 🌸",
+ "Your shy smile is dangerous, Divya. It starts so softly, then your whole face lights up. It genuinely makes my day. 💗",
+ "I could listen to your random stories, your little updates and your Saurav Joshi vlog talks for hours. I don't need a topic; I just love hearing you. 🎥"
+];
+let selectedMoment=-1, puzzleWords=[], revealedDetails=new Set();
+const correctWords=['Your','smile','makes','my','day'];
+function chooseMoment(btn,index){document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');selectedMoment=index;document.getElementById('momentFeedback').textContent=momentLines[index];document.getElementById('momentNext').disabled=false;}
+function goQuest(n){[1,2,3].forEach(i=>document.getElementById('questStep'+i).hidden=i!==n);document.getElementById('questComplete').hidden=true;document.getElementById('questCount').textContent='Step '+n+' of 3';document.getElementById('questProgress').style.width=((n-1)/3*100)+'%';if(n===2)resetPuzzle();document.getElementById('loveQuest').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetPuzzle(){puzzleWords=[];const bank=document.getElementById('wordBank');bank.innerHTML='';const shuffled=['day','Your','my','smile','makes'];shuffled.sort(()=>Math.random()-.5);shuffled.forEach((word,i)=>{const b=document.createElement('button');b.className='word';b.textContent=word;b.onclick=()=>addWord(word,b);bank.appendChild(b)});renderAnswer();document.getElementById('puzzleFeedback').textContent='A hint: it starts with what I love seeing on your face.';}
+function addWord(word,button){if(button.disabled)return;puzzleWords.push(word);button.disabled=true;renderAnswer();}
+function renderAnswer(){const line=document.getElementById('answerLine');line.innerHTML='';if(!puzzleWords.length){line.textContent='Your words will appear here…';return}puzzleWords.forEach(w=>{const span=document.createElement('span');span.className='answer-word';span.textContent=w;line.appendChild(span)});}
+function checkPuzzle(){if(puzzleWords.length!==correctWords.length||puzzleWords.some((w,i)=>w!==correctWords[i])){document.getElementById('puzzleFeedback').textContent='Not quite, sweetheart. Try again — take your time. Hint: Your / smile / makes / my / day.';return;}document.getElementById('puzzleFeedback').textContent='Exactly! And it is true every single day. Your smile makes my day. 💗';document.getElementById('questProgress').style.width='66%';setTimeout(()=>goQuest(3),1100);}
+const detailLines=[
+ "Your eyes, the way your expressions change, and the little look you give when you're about to tell me something.",
+ "Your toes, nails, knees, elbows, face, neck — all those tiny details you might overlook. I notice them because they're part of you, never because you need to change them.",
+ "That smile. From the smallest shy one to the full one you can't control. I wish I could bottle the happiness it gives me.",
+ "Your stories, your silly moments, your quiet moments, your imperfections and your kindness. I adore the whole person, not a checklist."
+];
+function revealDetail(btn,index){if(revealedDetails.has(index))return;revealedDetails.add(index);btn.classList.add('revealed');btn.querySelector('small').textContent=detailLines[index];document.getElementById('detailFeedback').textContent='One more little thing noticed. '+revealedDetails.size+' of 4 revealed.';if(revealedDetails.size===4){document.getElementById('finishQuest').disabled=false;document.getElementById('detailFeedback').textContent='Every card, every detail — all leading to the same answer: I adore you, Divya. ♡';}}
+function finishLoveQuest(){document.getElementById('questStep3').hidden=true;document.getElementById('questComplete').hidden=false;document.getElementById('questCount').textContent='All steps complete';document.getElementById('questProgress').style.width='100%';hearts();}
+
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLove()});
 </script>
 </body>
