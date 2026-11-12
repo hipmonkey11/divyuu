@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#210d24">
+<title>To My Most Beautiful Girl ♡</title>
+<style>
+:root{--pink:#ff8fb3;--rose:#ff5f91;--cream:#fff2ed;--night:#210d24}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 15%,#542344 0%,#2a102b 42%,#160a20 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+#stars,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff5dc;opacity:.55;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.5)}}
+.petal{position:absolute;top:-10vh;color:#ff9fbd;opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(80px,115vh,0) rotate(540deg);opacity:0}}
+main{position:relative;z-index:1}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 22px 55px}
+.content{max-width:780px;margin:auto}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font:11px Arial,sans-serif;color:#ffc0d2}
+h1{font-size:clamp(43px,9vw,86px);line-height:1.03;font-weight:normal;margin:20px 0;color:#fff1ec;text-shadow:0 0 35px #ff7da766}
+h1 span{color:var(--pink);font-style:italic}
+.subtitle{font-size:clamp(17px,3vw,22px);line-height:1.7;color:#f6dce6;max-width:610px;margin:24px auto}
+.heart{font-size:38px;display:inline-block;animation:heartbeat 1.5s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.2)}28%{transform:scale(1)}42%{transform:scale(1.13)}}
+.btn{border:1px solid #ffabc4;background:linear-gradient(135deg,#ff8fb3,#e84d86);color:#351329;padding:16px 25px;border-radius:999px;font: bold 14px Arial,sans-serif;letter-spacing:.4px;cursor:pointer;box-shadow:0 10px 35px #fa609044;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px #fa609077}
+.hint{font:12px Arial,sans-serif;color:#d7b7c7;margin-top:15px}
+section{padding:90px 22px;text-align:center}
+.section-inner{max-width:850px;margin:auto}
+h2{font-size:clamp(30px,6vw,48px);font-weight:normal;margin:0 0 20px}
+.lead{color:#f1cfdd;line-height:1.8;font-size:18px;max-width:650px;margin:0 auto 35px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px;margin-top:36px}
+.card{border:1px solid #ffffff20;background:#ffffff0a;backdrop-filter:blur(8px);border-radius:20px;padding:26px 20px;min-height:175px;transition:.3s}
+.card:hover{transform:translateY(-6px);background:#ffffff12;border-color:#ff9fbd77}
+.card .emoji{font-size:30px}
+.card h3{font-size:20px;font-weight:normal;color:#ffc0d2;margin:14px 0 8px}
+.card p{font:14px/1.7 Arial,sans-serif;color:#ead3de;margin:0}
+.quote{font-size:clamp(22px,4vw,34px);line-height:1.5;font-style:italic;color:#ffe3eb;max-width:760px;margin:0 auto}
+.divider{color:#ff9fbd;font-size:25px;letter-spacing:12px;margin:25px 0}
+.note{font:13px/1.7 Arial,sans-serif;color:#d8bdca}
+footer{text-align:center;padding:35px 20px 55px;color:#d7b6c6;font:13px Arial,sans-serif}
+.modal{position:fixed;inset:0;z-index:10;background:#100713d9;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(9px)}
+.modal.show{display:flex;animation:fade .25s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal-box{position:relative;width:min(550px,100%);padding:42px 27px 32px;border:1px solid #ffabc477;border-radius:26px;background:linear-gradient(145deg,#54213f,#27112e);text-align:center;box-shadow:0 25px 90px #0009;animation:pop .45s cubic-bezier(.2,.9,.2,1.2)}
+@keyframes pop{from{transform:scale(.75) translateY(20px);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-box .big-heart{font-size:48px}
+.modal-box h2{font-size:34px;color:#ffd5e1;margin:12px 0}
+.modal-box p{font-size:18px;line-height:1.8;color:#fff0f4}
+.close{position:absolute;right:15px;top:12px;border:0;background:none;color:#ffe1eb;font-size:26px;cursor:pointer}
+#burst{position:fixed;inset:0;pointer-events:none;z-index:20}
+.floating-heart{position:absolute;font-size:22px;animation:floatup 2.2s ease-out forwards}
+@keyframes floatup{to{transform:translateY(-75vh) rotate(25deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="petals" id="petals"></div><div id="burst"></div>
+<main>
+<section class="hero">
+ <div class="content">
+  <div class="eyebrow">A little page, made with a lot of love</div>
+  <div class="heart">♡</div>
+  <h1>To my <span>most beautiful</span> girl</h1>
+  <p class="subtitle">There are a thousand ways to describe beauty, but somehow none of them feel enough when I'm trying to describe you.</p>
+  <button class="btn" onclick="openLove(0)">Touch here to know how I feel ♡</button>
+  <div class="hint">Made for you. Read slowly, my love.</div>
+ </div>
+</section>
+<section>
+ <div class="section-inner">
+  <div class="eyebrow">Things I wish you could see</div>
+  <h2>You are beautiful in ways you don't notice</h2>
+  <p class="lead">I don't mean only the way you look when you're dressed up. I mean the little things that make you unmistakably, wonderfully you.</p>
+  <div class="cards">
+   <article class="card"><div class="emoji">✨</div><h3>Your smile</h3><p>The kind that makes an ordinary moment feel like my favourite memory.</p></article>
+   <article class="card"><div class="emoji">🌷</div><h3>Your little ways</h3><p>Your expressions, your voice, your laugh, and all the tiny things you may not even notice.</p></article>
+   <article class="card"><div class="emoji">🌙</div><h3>Your real self</h3><p>Even on quiet, messy, tired days. You never have to be perfect to be precious to me.</p></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="section-inner">
+  <div class="divider">♡ ✧ ♡</div>
+  <p class="quote">“If only you could borrow my eyes for a moment, you'd understand why I keep finding new reasons to fall for you.”</p>
+  <div class="divider">♡ ✧ ♡</div>
+  <p class="note">You don't need to look like anyone else. You don't need to change a thing to earn my admiration.</p>
+ </div>
+</section>
+<section>
+ <div class="section-inner">
+  <div class="eyebrow">One more thing, sweetheart</div>
+  <h2>Whenever you forget…</h2>
+  <p class="lead">Come back here. Tap the button. Let me remind you that you are loved, admired, and cherished exactly as you are.</p>
+  <button class="btn" onclick="openLove(1)">One last little surprise 💗</button>
+ </div>
+</section>
+<footer>Made with all my love, just for you. <span style="color:#ff9fbd">♡</span></footer>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeLove()">
+ <div class="modal-box">
+  <button class="close" aria-label="Close" onclick="closeLove()">×</button>
+  <div class="big-heart">💗</div>
+  <h2 id="modalTitle">My beautiful girl…</h2>
+  <p id="modalText"></p>
+  <button class="btn" onclick="closeLove()">Keep this in your heart ♡</button>
+ </div>
+</div>
+<script>
+const messages=[
+ {title:"My beautiful girl…",text:"I wish you could see what I see when I look at you. I see the girl whose smile can turn my whole day around, whose presence feels like peace, and whose little imperfections make her perfectly herself. You are not beautiful because I love you. I love you, and I find you beautiful in a thousand different ways. ♡"},
+ {title:"A promise from me",text:"On the days you feel pretty, I'll admire you. On the days you don't, I'll still admire you. You never have to earn my love by looking a certain way. I want to be the person who reminds you gently, patiently, and honestly: you are enough, you are special, and you are my favourite person. I love you. 💗"}
+];
+function openLove(i){document.getElementById('modalTitle').textContent=messages[i].title;document.getElementById('modalText').textContent=messages[i].text;document.getElementById('modal').classList.add('show');hearts()}
+function closeLove(){document.getElementById('modal').classList.remove('show')}
+function hearts(){const root=document.getElementById('burst');for(let i=0;i<22;i++){const e=document.createElement('span');e.className='floating-heart';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.top=(55+Math.random()*40)+'vh';e.style.animationDelay=Math.random()*.5+'s';root.appendChild(e);setTimeout(()=>e.remove(),2800)}}
+const stars=document.getElementById('stars');for(let i=0;i<65;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s)}
+const petals=document.getElementById('petals');for(let i=0;i<18;i++){const p=document.createElement('span');p.className='petal';p.textContent='✿';p.style.left=Math.random()*100+'%';p.style.animationDuration=(9+Math.random()*13)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.fontSize=(10+Math.random()*13)+'px';petals.appendChild(p)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLove()});
+</script>
+</body>
+</html>
